@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1173810354795466}
+  m_RootGameObject: {fileID: 1785792477502024}
   m_IsPrefabAsset: 1
---- !u!1 &1173810354795466
+--- !u!1 &1785792477502024
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4639800483887934}
-  - component: {fileID: 114916617741756520}
+  - component: {fileID: 4437152852401906}
+  - component: {fileID: 114617240003429498}
   m_Layer: 0
-  m_Name: WordGenerator
+  m_Name: WordReader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4639800483887934
+--- !u!4 &4437152852401906
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1173810354795466}
+  m_GameObject: {fileID: 1785792477502024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,22 +40,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114916617741756520
+--- !u!114 &114617240003429498
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1173810354795466}
+  m_GameObject: {fileID: 1785792477502024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ccb525d4358b6741938cb5f4520ea4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b813190ed6f6d44a82f5366616b8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Words: []
-  maincanvas: {fileID: 223342867669299898, guid: fdb7a5c9186a0fb479d6862c3191b343,
-    type: 2}
-  WordText: {fileID: 1150090484321942, guid: 8cf76ba8396ba684683750c1cef8aa4a, type: 2}
-  LeftEdge: 60
-  RightEdge: 352
-  BottomEdge: 30
-  TopEdge: 300
