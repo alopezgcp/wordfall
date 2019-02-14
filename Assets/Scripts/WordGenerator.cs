@@ -32,7 +32,8 @@ public class WordGenerator : MonoBehaviour {
         BottomEdge = 30;
         TopEdge = Screen.height - 30;
 
-    InvokeRepeating("CreateText", 0.01f, 1.0f);
+        InvokeRepeating("CreateText", 0.01f, 1.0f);
+        InvokeRepeating("DestroyText", 5.51f, 1.0f); 
     }
 	
     void CreateText()
@@ -47,6 +48,11 @@ public class WordGenerator : MonoBehaviour {
         wordtext.text = Words[rndIndex];
     }
 
+    void DestroyText()
+    {
+        GameObject FallingWord = GameObject.Find("Canvas/WordText(Clone)");
+        Object.Destroy(FallingWord);
+    }
     // Update is called once per frame
     void Update () {
 	}

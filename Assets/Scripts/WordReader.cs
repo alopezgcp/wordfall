@@ -4,12 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class WordReader : MonoBehaviour {
+
     public Canvas canvas;
-	// Use this for initialization
+    public string latest_string;
+    public List<string> potentialmatches;
+    
 	void Start () {
-	}
-	
-	// Update is called once per frame
+        latest_string = null;
+    }
+
 	void Update () {
+        foreach (Transform child in canvas.transform)
+        {
+            Text tempText = child.GetComponent<Text>();
+            Debug.Log(tempText.text);
+        }
 	}
 }
