@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4437152852401906}
   - component: {fileID: 114617240003429498}
   m_Layer: 0
-  m_Name: WordReader
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,5 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 223342867669299898, guid: fdb7a5c9186a0fb479d6862c3191b343, type: 2}
-  inputchars: 
-  potentialmatches: []
+  userinput: {fileID: 0}
+  input_text: {fileID: 0}

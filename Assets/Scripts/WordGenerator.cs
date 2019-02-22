@@ -16,9 +16,13 @@ public class WordGenerator : MonoBehaviour {
     public float BottomEdge = 30;
     public float TopEdge = Screen.height - 30;
 
+    public float left_x = Screen.width * 0.25f,
+                 center_x = Screen.width * 0.4f,
+                 right_x = Screen.width * 0.65f;
+
     void Start () {
         string word;
-        using (StreamReader sr = new StreamReader("Assets/Files/words.txt"))
+        using (StreamReader sr = new StreamReader("Assets/Files/practice-code.cpp"))
         {
             while (!(sr.EndOfStream))
             {
@@ -29,31 +33,31 @@ public class WordGenerator : MonoBehaviour {
 
         LeftEdge = 100;
         RightEdge = Screen.width - 100;
-        BottomEdge = 30;
+        BottomEdge = 100;
         TopEdge = Screen.height - 30;
 
-        InvokeRepeating("CreateText", 0.01f, 1.0f);
-        InvokeRepeating("DestroyText", 5.51f, 1.0f); 
+        InvokeRepeating("SpawnWord", 0.01f, 2f);
     }
-	
-    void CreateText()
+
+    void SpawnWord()
     {
         GameObject FallingWord = Instantiate(WordText, maincanvas.transform, true);
         Text wordtext = FallingWord.GetComponent<Text>();
 
-        Vector2 rndPosition = new Vector2(Random.Range(LeftEdge, RightEdge), Random.Range(BottomEdge, TopEdge));
-        FallingWord.transform.position = rndPosition;
-
         int rndIndex = Random.Range(0, Words.Count - 1);
         wordtext.text = Words[rndIndex];
-    }
 
-    void DestroyText()
-    {
-        GameObject FallingWord = GameObject.Find("Canvas/WordText(Clone)");
-        Object.Destroy(FallingWord);
+        float x_pos = 0f;
+        if (Words[rndIndex].Length > 12)
+            x_pos = center_x;
+        else
+        {
+            float randvalue = Random.value;
+            if (randvalue <= 0.5f) x_pos = left_x;
+            else if (randvalue <= 1f) x_pos = right_x;
+        }
+
+        Vector2 rndPosition = new Vector2(x_pos, Screen.height + 10);
+        FallingWord.transform.position = rndPosition;
     }
-    // Update is called once per frame
-    void Update () {
-	}
 }
