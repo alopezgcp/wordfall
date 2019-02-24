@@ -14,10 +14,5 @@ public class FallingWord : MonoBehaviour {
     {
         Vector2 newpos = new Vector2(transform.position.x, transform.position.y - fallrate);
         transform.position = newpos;
-
-        if(transform.position.y < 100)
-        {
-            GameObject.Destroy(this);
-        }
     }
 }
