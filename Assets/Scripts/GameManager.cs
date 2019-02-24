@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
     public Canvas canvas;
     public InputField userinput;
     public Text input_text;
+    public LevelManager lm;
 
     private string input_string;
     private GameObject[] active_words;
@@ -16,10 +17,15 @@ public class GameManager : MonoBehaviour {
 
     void Start () {
         userinput.ActivateInputField();
+        StaticsMgr.SetScore(0);
     }
 
 	void Update () {
         FindMatches();
+        if(StaticsMgr.GetWordCount() >= 60)
+        {
+            lm.LoadLevel("EndMenu");
+        }
     }
 
     public void FindMatches()
@@ -60,12 +66,13 @@ public class GameManager : MonoBehaviour {
                 // if the input completely matches a word, destroy word and reset input text
                 if (input_string == word_string)
                 {
+                    StaticsMgr.UpdateScore(word_string.Length);
                     GameObject.Destroy(word);
                     userinput.text = "";
                 }
 
                 // if the word gets to the bottom, just destroy it
-                if(word.transform.position.y < 100)
+                if(word.transform.position.y < 150)
                 {
                     GameObject.Destroy(word);
                 }
@@ -75,7 +82,7 @@ public class GameManager : MonoBehaviour {
         {
             word.GetComponent<Text>().color = new Color(1, 1, 1, 1);
 
-            if (word.transform.position.y < 100)
+            if (word.transform.position.y < 150)
             {
                 GameObject.Destroy(word);
             }

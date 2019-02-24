@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FallingWord : MonoBehaviour {
-    public float fallrate = 0.0f;
+    public float minfallrate = 0.4f, maxfallrate = 1.2f;
+    private float fallrate;
 
     private void Start()
     {
-        fallrate = Random.Range(.5f, 1.5f);
+        fallrate = Random.Range(minfallrate, maxfallrate);
     }
     private void Update()
     {
